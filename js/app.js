@@ -1,3 +1,5 @@
+'use strict'; 
+
 // Contructor function - Enemies our player must avoid
 // Set the image/sprite for enemies
 // Set intitial X & Y location of enemies
@@ -56,7 +58,7 @@ Player.prototype.update = function() {
     //Restart game by reseting the player
     if(this.y < 70) {
         setTimeout(function() {
-            player.reset();
+            this.reset();
         }, 200);
     }   
 };
@@ -66,10 +68,11 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-// Reset the player by creating & assigning a new one.
+// Reset the player by setting x & y locations.
 Player.prototype.reset = function() {
-    player = new Player(202, 402);
-}
+    this.x = 202;
+    this.y = 402;
+};
 
 // Handles the gamer input and moves player accordingly
 Player.prototype.handleInput = function(e) {
