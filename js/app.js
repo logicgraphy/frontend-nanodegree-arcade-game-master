@@ -37,7 +37,7 @@ Enemy.prototype.reset = function() {
     if(this.speed < 0) {
         this.speed = this.speed * (-1);
     }
-}
+};
 
 // Now write your own player class
 // This class requires an update(), render() and
