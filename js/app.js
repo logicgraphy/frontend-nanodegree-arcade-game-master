@@ -57,8 +57,9 @@ Player.prototype.update = function() {
     //Check if player reached its goal (water)
     //Restart game by reseting the player
     if(this.y < 70) {
+        var self = this;
         setTimeout(function() {
-            this.reset();
+            self.reset();
         }, 200);
     }   
 };
